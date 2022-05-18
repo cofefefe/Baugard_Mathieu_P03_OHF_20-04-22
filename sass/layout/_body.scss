@@ -1,0 +1,557 @@
+/* body de l'index : menu de selection "fonctionnement", menu "restaurants", menu présentation */
+
+/* Index top / follow our restaurant in a box */
+.menu{
+    width:100%;
+    @include flex_center;
+    background-color:#f6f6f6;
+    flex-direction:column;
+        a{
+            font-family: roboto, "Times New Roman", Times, serif;
+            text-decoration: none;
+            color: white;
+            height:100px;
+        }
+        &__element{
+            @include flex_center;
+            flex-direction:row;
+            background-color:#eaeaea;
+            width:100%;
+            box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+            padding-top:5px;
+            padding-bottom:5px;
+            font-family: roboto,'Times New Roman', Times, serif;
+            color:#353535;
+        }
+        i{
+            padding-right:15px;
+            padding-bottom:5px;
+        }
+        &__card{
+            text-align:center;
+            max-width:60%;
+            @include flex_center;
+            flex-direction:column;
+            
+        }
+        .btn{
+        @include button;
+        }
+        h1, p{
+            font-family:roboto,'Times New Roman', Times, serif;
+        }
+}
+
+.block a{
+    box-shadow:1px 5px 15px 0px rgba(0,0,0,0.36);
+}
+
+
+/* Menu Fonctionnement INDEX*/
+
+.working{
+
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:white;
+
+    & h2{
+        font-family:roboto, 'Times New Roman', Times, serif;
+        margin-left:5%;
+        font-size:22px;
+        min-width:90%;
+        align-self:flex-start
+    }
+
+    &__block{
+        width:280px;
+        margin-left:5px;
+        margin-right:5px;
+        transition:transform .4s ease-in-out, box-shadow 0.5s ease-in;
+        &:hover i{
+            color:$primary-color;
+        }
+        &:hover{
+            filter:brightness(1.1);
+        }
+    }
+
+    &__block{
+        font-family:roboto,'Times New Roman', Times, serif;
+        font-size:14px;
+        margin:auto;
+        width:330px;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        background-color:#f2f2f2;
+        margin-bottom:20px;
+        padding-top:15px;
+        padding-bottom:15px;
+        border-radius:20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position:relative;
+        font-weight:bold;
+    }
+
+    & a{
+        display:flex;
+        flex-direction:row;
+        text-decoration:none;
+    }
+
+    &__txt{
+        margin-left:12%;
+        min-width:180px;
+        color:black;
+    }
+
+    &__icon{
+        padding-left:10px;
+        padding-right:10px;
+        color:#7e7e7e;
+        margin-left:2%;
+        font-size:18px;
+    }
+
+
+    &__item{
+        border:1px solid $primary-color;
+        height:25px;
+        width:25px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background-color:$primary-color;
+        color:white;
+        position:relative;
+        right:12px;
+            
+    }
+}
+
+/* Responsive working menu global rules */
+
+@media screen and (min-width:920px){
+    .working{
+        display:flex;
+        position:relative;
+        transform:scale(1);
+        nav{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        }
+
+        &__block{
+            width:260px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        &__item{
+            height:10px;
+            width:25px;
+            padding:8px;
+        }
+    }
+}
+
+
+
+.container__all{
+    margin: 20px 30px 50px 30px;
+}
+body{
+    background-color:#f6f6f6;
+}
+/* Block "restaurants" position/design/ index restaurant / Homepage */
+.block {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap:32px;
+    row-gap: 32px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom:20px;
+
+    &__subtitle{
+        font-family:roboto,'Times New Roman', Times, serif;
+    }
+  
+    @media (min-width:1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      .block__card{
+          display:flex;
+          flex-direction:column;
+          margin-bottom:-10px;
+          border-radius:15px;
+          position:relative;
+          
+          p{
+              margin:0;
+              font-family:roboto, 'Times New Roman', Times, serif;
+          }
+          &__footer{
+              bottom:35px;
+          }
+      }
+      a{
+          background-color:white;
+          border-radius:15px;
+         
+      }
+    }
+
+  
+    &__img {
+      max-height:200px;
+      width: 100%;
+      border: transparent solid 0px;
+      border-radius: 15px 15px 0 0;
+      box-shadow: none;
+      object-fit: cover;
+    }
+  
+    &__item {
+      background-color: $color-tertiary;
+      color: darken($color-tertiary, 50%);
+      padding: 8px;
+      border-radius: 2px;
+      position: absolute;
+      top: 16px;
+      right: 12px;
+      font-family:roboto, times, serif;
+      font-weight:bold;
+
+        &--first{
+            font-family:roboto, times, serif;
+            background-color: #99e2d0;
+            color: darken(#99e2d0, 50%);
+            padding: 8px;
+            border-radius: 2px;
+            position: absolute;
+            top:16px;
+            right: 12px;
+            font-weight:bold;
+        }
+    }
+  
+    &__footer {
+      padding: 1rem;
+      
+      display: flex;
+      align-items: center;
+    }
+  
+    &__content {
+      flex: 1;
+    }
+  
+    &__title {
+      margin: 0;
+      margin-bottom: 4px;
+    }
+  
+    &__subtitle {
+      margin: 0;
+    }
+  
+    &__btn {
+      height: 32px;
+      width: 32px;
+      background-color: transparent;
+      border: transparent 0px solid;
+      padding: 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+  
+    &__like {
+      background-color: white!important;
+    }
+    a{
+        background-color:white;
+        border-radius:15px;
+    }
+
+}
+/* Responsive "working" menu make a column */
+@media screen and(max-width:1024px){
+    .block{
+        position:relative;
+        &__card{
+            position:relative;
+        }
+        &__item{
+            position: absolute;
+            top: 15px;
+            right: 5px;
+
+            &--first{
+                top: 20px;
+                position: absolute;
+                right:5px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.restaurants__title{
+    font-size:23px;
+}
+
+
+/* position and skin of heart icon*/
+.menu{
+    &__like{
+        &--regular{
+            position:relative;
+            left:0px;
+            top:20px;
+        }
+        &--solid{
+            @include heart;
+            bottom:17px;
+         
+        }
+    }
+}
+
+/* Rules of solid heart*/
+.menu:hover .fas{
+    opacity:1;
+    z-index: 1;
+    transform:scale(1.1);
+}
+
+/* Body secondary-page : baneer pic, menus (entrees,plats,desserts)*/
+.main {
+
+    &__like{
+        &--full{
+            
+            right:36px;
+            @include heart;
+            transition:transform 500ms, opacity 600ms;
+        }
+    }
+    &__heart:hover .main__like--full{
+        opacity:1;
+        transform:scale(1.2)
+    }
+    
+    img{
+        width:100%;
+        max-height:500px;
+        object-fit:cover;
+    }
+
+  &__all{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-around;
+      margin: 0 10px;
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-top-right-radius: 25px;
+    background-color: #f6f6f6;
+    bottom: 50px;
+    border-top-left-radius: 25px;
+  }
+  &__header{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      margin: 0 0 0 20px;
+      align-items:center;
+    }
+    
+  
+   &__block {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 19px 0 10px;
+    
+   }
+  
+    &__title {
+    text-transform: uppercase;
+    border-bottom:$color-tertiary solid 3px;
+    width:40px;
+    text-align:left;
+    padding-bottom:8px;
+    font-weight:lighter; 
+    }
+  
+  
+  .maincard {
+      
+    animation-name:appear;
+    animation-fill-mode: both;
+    animation-duration:1s;
+    transform: scale(0);
+    max-width:315px;
+    min-width:315px;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    border-radius: 12px;
+    margin: 16px 0;
+    box-shadow:0px 0px 8px 3px rgba(148,148,148,0.52);
+    overflow: hidden;
+    cursor: pointer;
+    justify-content:space-between;
+      
+
+      
+    &__txt {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    &__title {
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-family: robotobold, 'Times New Roman', Times, serif;
+    }
+  
+    &__description {
+      margin: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    &__price {
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;     
+      font-family:robotobold, 'Times New Roman', Times, serif;
+      font-weight: bold;
+    padding-left: 0.5rem;
+      margin-left:auto;
+    }
+    
+  
+    &__checked{
+      background-color: #99e2d0;
+      margin: -16px -96px -16px 16px;
+      width: 75px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition-duration: 0.5s;
+    }
+  
+    
+  
+    &__Icon {
+    height: 25.6px;
+    width: 25.6px;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 100px;
+    transform: rotate(0deg);
+    transition-duration: 0.5s;
+    }
+  
+  
+    &__icon {
+      color:#99e2d0;
+      transition: transform 500ms;
+      transform:rotate(420deg);
+    }
+  }  
+}
+
+/* Rules animation checked */
+.maincard:hover .maincard__checked{
+    margin-right:-17px;
+} 
+.maincard:hover .maincard__Icon{
+    transform:rotate(300deg);
+}
+
+/*maincard appearance delay*/
+.delay-1{
+    animation-delay: 0.6s;
+}
+  
+.delay-2{
+    animation-delay: 1.2s
+}
+  
+.delay-3{
+    animation-delay: 1.6s;
+}
+
+.delay-4{
+    animation-delay:2s;
+}
+
+
+/* Responsive menu secondary page*/
+@media screen and (max-width:1140px){
+    .main{
+        &__all{
+            display:flex;
+            flex-direction:column;
+        }
+    }
+    .maincard{
+        min-width:95%!important;
+        max-width:none;
+        margin:0 20px;
+
+    }
+}
+
+/* heart place with smartphone */
+
+/* btn rules / mixins and hover */
+.btn{
+    @include button;
+    text-align:center;
+    height:30px;
+    @include shadowregular;
+    &:hover{
+        box-shadow: 10px 0px 15px 5px rgb(255 121 218 / 50%),
+         0px 10px 15px 5px rgb(147 86 220 / 50%);
+        filter:brightness(1.1);   
+    }
+    &--index{
+        margin-top:10px!important;
+        margin-bottom:10px!important;
+        @include button;
+        &:hover{
+            box-shadow: 10px 0px 15px 5px rgb(255 121 218 / 30%),
+            0px 10px 15px 5px rgb(147 86 220 / 30%);
+            filter:brightness(1.1); 
+        }
+    }
+}
+
+
+
+
+
+
+
+
